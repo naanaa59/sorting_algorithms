@@ -1,4 +1,4 @@
-#include <sort.h>
+#include "sort.h"
 
 /**
  * print_array - Prints an array of integers
