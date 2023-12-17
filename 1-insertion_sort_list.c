@@ -31,25 +31,32 @@ void swap_nodes(listint_t **list, listint_t *node1, listint_t *node2)
 
 void insertion_sort_list(listint_t **list)
 {
-    listint_t *current;
-    int flag = 1;
+    listint_t *current, *tmp;
+    int swapped;
 
     if (list == NULL || *list == NULL || (*list)->next == NULL)
         return;
-    while (flag)
+
+    do
     {
+        swapped= 0;
         current = *list;
-        flag = 0;
         while (current->next)
         {
             if(current->n > current->next->n)
             {
-                flag = 1;
                 swap_nodes(list, current, current->next);
+                tmp = current->prev;
                 print_list(*list);
+                while (tmp && tmp->prev && (tmp->prev->n > tmp->n))
+                {
+                    swap_nodes(list, tmp->prev, tmp);
+                    print_list(*list);
+                }
+                swapped = 1;
             }
             else
                 current = current->next;
         }
-    }
+    } while (swapped);
 }
