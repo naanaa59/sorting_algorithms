@@ -36,13 +36,13 @@ void insertion_sort_list(listint_t **list)
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
-	do
+	while (swapped)
 	{
-		swapped= 0;
+		swapped = 0;
 		current = *list;
 		while (current->next)
 		{
-			if(current->n > current->next->n)
+			if (current->n > current->next->n)
 			{
 				swap_nodes(list, current, current->next);
 				tmp = current->prev;
@@ -57,5 +57,5 @@ void insertion_sort_list(listint_t **list)
 			else
 				current = current->next;
 		}
-	} while (swapped);
+	}
 }
