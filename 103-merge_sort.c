@@ -3,14 +3,14 @@
 
 void merge_sort(int *array, size_t size)
 {
-    size_t mid = 0, i, j;
-    int *left, *right;
-    
-    mid = (size/2);
+	size_t mid = 0, i, j;
+	int *left, *right;
 
-    for (i = 0; i < mid; i++)
-    {
-        
-    }
+	mid = (size/2);
+
+	for (i = 0; i < mid; i++)
+	{
+
+	}
 
 }
