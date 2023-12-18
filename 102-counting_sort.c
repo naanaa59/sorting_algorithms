@@ -31,20 +31,20 @@ void counting_sort(int *array, size_t size)
 		free(output);
 		return;
 	}
-	for (j = 0; j <= max; j++)
+	for (j = 0; j < (max + 1); j++)
 		count[j] = 0;
 	for (i = 0; i < size; i++)
-		count[array[i]]++;
-	for (j = 1; j <= max; j++)
+		count[array[i]] += 1;
+	for (j = 1; j < (max + 1); j++)
 		count[j] += count[j - 1];
 	print_array(count, max + 1);
-	for (i = size - 1; i < size; i--)
+	for (i = 0; i < size; i++)
 	{
 		output[count[array[i]] - 1] = array[i];
-		count[array[i]]--;
+		count[array[i]] -= 1;
 	}
 	for (i = 0; i < size; i++)
 		array[i] = output[i];
-	free(count);
 	free(output);
+	free(count);
 }
