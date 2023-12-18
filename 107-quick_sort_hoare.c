@@ -48,7 +48,7 @@ size_t hoare_partition(int *array, size_t low, size_t high, size_t size)
 }
 
 /**
- * quicksort - sorts using recursive quick sort
+ * quicksort_hoare_recursive - sorts using recursive quick sort
  * @array: our array
  * @low: low elem
  * @high: high elem
