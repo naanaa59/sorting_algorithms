@@ -73,5 +73,7 @@ void heap_sort(int *array, size_t size);
 void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
-
+int *create_sorted_array(int *array, size_t size, int *counting_array);
+int *create_counting_array(int *array, size_t size);
+int array_max(int *array, size_t size)
 #endif
