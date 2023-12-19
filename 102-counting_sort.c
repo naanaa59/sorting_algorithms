@@ -19,13 +19,13 @@ void counting_sort(int *array, size_t size)
 			max = array[i];
 	}
 	output = malloc(sizeof(int) * size);
-	if (!output)
+	if (output == NULL)
 	{
 		free(output);
 		return;
 	}
 	count = malloc(sizeof(int) * (max + 1));
-	if (!count)
+	if (count == NULL)
 	{
 		free(output);
 		return;
