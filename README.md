@@ -2,7 +2,7 @@
 
 ## Resources
 
-## Read or watch:
+#### Read or watch:
 
 * [Sorting algorithm](https://intranet.alxswe.com/rltoken/-j5MKLBlzZAC2RfJ5DTBIg)
 * [Big O notation](https://intranet.alxswe.com/rltoken/WRvrE2BaNVQFssHiUATTrw)
