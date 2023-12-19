@@ -1,4 +1,4 @@
-# Project: 0x1B. C - Sorting algorithms & Big O
+ Project: 0x1B. C - Sorting algorithms & Big O
 
 ## Resources
 
