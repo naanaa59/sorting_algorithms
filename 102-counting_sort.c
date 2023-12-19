@@ -3,6 +3,7 @@
  * get_max - gets the max value in an array.
  * @array: the array.
  * @size: the zise of the array.
+ * Return: max
  */
 int get_max(int *array, size_t size)
 {
