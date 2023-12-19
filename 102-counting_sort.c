@@ -7,7 +7,7 @@
  */
 int get_max(int *array, size_t size)
 {
-	int max;
+	int max = array[0];
 
 	while (size--)
 	{
