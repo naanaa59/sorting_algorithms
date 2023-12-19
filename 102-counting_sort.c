@@ -3,7 +3,7 @@
  * get_max - gets the max value in an array.
  * @array: the array.
  * @size: the zise of the array.
-*/
+ */
 int get_max(int *array, size_t size)
 {
 	int max;
@@ -30,7 +30,7 @@ void counting_sort(int *array, size_t size)
 		return;
 
 	max = get_max(array, size);
-	
+
 	output = malloc(sizeof(*output) * (max + 1));
 	if (output == NULL)
 	{
