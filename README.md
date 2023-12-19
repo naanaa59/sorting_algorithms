@@ -12,7 +12,7 @@
 * [All about sorting algorithms](https://intranet.alxswe.com/rltoken/21X_eaj5RGcLIL9mZv2sqw)
 ## Learning Objectives
 
-### General
+## General
 
 * At least four different sorting algorithms
 * What is the Big O notation, and how to evaluate the time complexity of an algorithm
