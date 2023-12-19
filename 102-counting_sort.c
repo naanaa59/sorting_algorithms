@@ -1,22 +1,5 @@
 #include "sort.h"
-/**
- * get_max - gets the max value in an array.
- * @array: the array.
- * @size: the zise of the array.
- * Return: max
- */
-int get_max(int *array, size_t size)
-{
-	size_t i;
-	int max = 0;
 
-	for (i = 0; i < size; i++)
-	{
-		if (array[i] > max)
-			max = array[i];
-	}
-	return (max);
-}
 /**
  * counting_sort - sorts an array of integers in ascending
  * order using the Counting sort algorithm
@@ -25,32 +8,39 @@ int get_max(int *array, size_t size)
  */
 void counting_sort(int *array, size_t size)
 {
-	int j, *count, *output;
-	size_t i, count_range;
+	int j, *count, *output, max = array[0];
+	size_t i;
 
 	if (array == NULL || size < 2)
 		return;
-
-	count_range = get_max(array, size) + 1;
-
-	if (count_range < 2)
-		return;
-
-	count = calloc(count_range, sizeof(int));
-	if (count == NULL)
-		return;
-	for (i = 0; i < size; i++)
-		count[array[i]]++;
-	for (i = 1; i + 1 < count_range; j++)
-		count[i + 1] += count[i];
-	print_array(count, count_range);
+	for (i = 1; i < size; i++)
+	{
+		if (array[i] > max)
+			max = array[i];
+	}
 	output = malloc(sizeof(int) * size);
-	if (output == NULL)
+	if (!output)
+	{
+		free(output);
 		return;
+	}
+	count = malloc(sizeof(int) * (max + 1));
+	if (!count)
+	{
+		free(output);
+		return;
+	}
+	for (j = 0; j < (max + 1); j++)
+		count[j] = 0;
+	for (i = 0; i < size; i++)
+		count[array[i]] += 1;
+	for (j = 1; j < (max + 1); j++)
+		count[j] += count[j - 1];
+	print_array(count, max + 1);
 	for (i = 0; i < size; i++)
 	{
 		output[count[array[i]] - 1] = array[i];
-		count[array[i]]--;
+		count[array[i]] -= 1;
 	}
 	for (i = 0; i < size; i++)
 		array[i] = output[i];
