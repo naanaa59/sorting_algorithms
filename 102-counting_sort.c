@@ -9,8 +9,6 @@ int get_max(int *array, size_t size)
 {
 	int max = array[0];
 
-	if (array == NULL)
-		return;
 	while (size--)
 	{
 		if (array[size] > max)
