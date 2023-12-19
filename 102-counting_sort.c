@@ -9,7 +9,7 @@ int get_max(int *array, size_t size)
 {
 	int max = array[0];
 
-	if (array == NULL || size < 2)
+	if (array == NULL)
 		return;
 	while (size--)
 	{
