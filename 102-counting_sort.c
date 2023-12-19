@@ -40,6 +40,12 @@ void counting_sort(int *array, size_t size)
 	for (i = 0; i < size; i++)
 	{
 		output[count[array[i]] - 1] = array[i];
+		if (array[i] != output[count[array[i]] - 1])
+		{
+			max = array[i];
+			array[i] = output[count[array[i]] - 1];
+			output[count[array[i]] - 1] = max;
+		}
 		count[array[i]] -= 1;
 	}
 	for (i = 0; i < size; i++)
